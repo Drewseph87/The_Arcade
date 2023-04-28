@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="tictactoe.js"></script>
+    <link rel="stylesheet" href="tictactoe.css"/>
+
+    <title>Welcome to Tic-Tac-Toe!</title>
+</head>
+<body>
+    <main>
+        <h1>Tic-Tac-Toe Party!</h1>
+        <div id="playerscounter">
+            <div id="player1name"><span id="player1winscount">0</span></div>
+            </select>
+            <div id="player2name"><span id="player2winscount">0</span></div>
+            </select>
+        </div>
+        <!-- Creating section for buttons -->
+        <div id="buttonarea">
+            <button id='reset'>RESET GAME</button>
+            <select>
+                <!-- values -->
+                <option value="onePlayer">One Player</option>
+                <option value="twoPlayers">Two Players</option>
+            </select>
+        </div>
+        <div class="gameBoard">
+            <div class="cell" id="1">1</div>
+            <div class="cell" id="2">2</div>
+            <div class="cell" id="3">3</div>
+            <div class="cell" id="4">4</div>
+            <div class="cell" id="5">5</div>
+            <div class="cell" id="6">6</div>
+            <div class="cell" id="7">7</div>
+            <div class="cell" id="8">8</div>
+            <div class="cell" id="9">9</div>
+        </div>
+        <div class="winnersection">
+            <h2 id="gamewinner">player 1 has won this game!</h2>
+        </div>
+    </main>
+</body>
+</html>
