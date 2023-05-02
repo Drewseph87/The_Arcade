@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="tictactoe.js"></script>
-    <link rel="stylesheet" href="tictactoe.css"/>
+    <script type="text/javascript" src="/tictactoe.js"></script>
+    <link rel="stylesheet" href="/tictactoe.css"/>
 
     <title>Welcome to Tic-Tac-Toe!</title>
 </head>
 <body>
     <main>
+        <!-- Top Portion of TicTacToe including title & playernames -->
         <h1>Tic-Tac-Toe Party!</h1>
         <div id="playerscounter">
-            <div id="player1name"><span id="player1winscount">0</span></div>
-            </select>
-            <div id="player2name"><span id="player2winscount">0</span></div>
-            </select>
+            <div id="player1name">Player 1:<span id="player1winscount">0</span></div>
+            <div id="player2name">Player 2:<span id="player2winscount">0</span></div>
         </div>
-        <!-- Creating section for buttons -->
+        <hr>
+        <!-- Creating section for buttons/drop Down -->
         <div id="buttonarea">
-            <button id='reset'>RESET GAME</button>
+            <button id='startgame'>START GAME</button>
+            <button id='resetgame'>RESET GAME</button>
             <select>
-                <!-- values -->
+                <!-- values within drop down -->
                 <option value="onePlayer">One Player</option>
                 <option value="twoPlayers">Two Players</option>
             </select>
         </div>
+        <!-- Board Game section with each cell -->
         <div class="gameBoard">
             <div class="cell" id="1">1</div>
             <div class="cell" id="2">2</div>
@@ -38,6 +40,7 @@
             <div class="cell" id="8">8</div>
             <div class="cell" id="9">9</div>
         </div>
+        <!-- Game Winning Section Display -->
         <div class="winnersection">
             <h2 id="gamewinner">player 1 has won this game!</h2>
         </div>

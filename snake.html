@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="tictactoe.js"></script>
+    <link rel="stylesheet" href="tictactoe.css"/>
+
+    <title>Welcome to Snake!</title>
+</head>
+<body>
+    <main>
+        <!-- Top Portion of TicTacToe including title & playernames -->
+        <h1>Snake!</h1>
+        <div id="playerscounter">
+            <div>Score:<span id="scorecounter">0</span></div>
+            <div>Length:<span id="scorecounter">0</span></div>
+        </div>
+        <hr>
+        <!-- Creating section for buttons/drop Down -->
+        <div id="buttonarea">
+            <!-- <button id='reset'>RESET GAME</button>
+            <select> -->
+                <!-- values within drop down for colored snake -->
+                <option value="green">Green</option>
+                <option value="purple">Purple</option>
+                <option value="gold">Gold</option>
+                <option value="gold">Light Blue</option>
+            </select>
+        </div>
+        <!-- Board Game section with each cell -->
+        <div class="gameBoard"></div>
+        <!-- Game Winning Section Display -->
+        <div class="popup">
+            You've Died!...
+            <button>Play Again?</button>
+        </div>
+    </main>
+</body>
+</html>
