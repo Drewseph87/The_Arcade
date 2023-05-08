@@ -127,12 +127,13 @@ main {
 .cell {
   background-color: blueviolet;
   color: whitesmoke;
-  text-shadow: 1px 1px 5px 3px;
+  text-shadow: 3px 3px black;
   height: 150px;
   max-width: 200px;
   display: grid;
   justify-content: center;
   align-items: center;
+  font-size: 75px;
 }
 
 .cell:nth-child(3n + 2) {
