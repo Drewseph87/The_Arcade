@@ -155,6 +155,7 @@ main {
   }
   h1 {
     font-size: 35px;
+    text-shadow: 4px 4px black;
   }
   .cell {
     height: 120px;
