@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="/tictactoe.js"></script>
-    <link rel="stylesheet" href="/tictactoe.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer type="text/javascript" src="tictactoe.js"></script>
+    <link rel="stylesheet" href="tictactoe.css" />
 
     <title>Welcome to Tic-Tac-Toe!</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <!-- Top Portion of TicTacToe including title & playernames -->
-        <h1>Tic-Tac-Toe Party!</h1>
-        <div id="playerscounter">
-            <div id="player1name">Player 1:<span id="player1winscount">0</span></div>
-            <div id="player2name">Player 2:<span id="player2winscount">0</span></div>
-        </div>
-        <hr>
-        <!-- Creating section for buttons/drop Down -->
-        <div id="buttonarea">
-            <button id='startgame'>START GAME</button>
-            <button id='resetgame'>RESET GAME</button>
-            <select>
-                <!-- values within drop down -->
-                <option value="onePlayer">One Player</option>
-                <option value="twoPlayers">Two Players</option>
-            </select>
-        </div>
-        <!-- Board Game section with each cell -->
-        <div class="gameBoard">
-            <div class="cell" id="1">1</div>
-            <div class="cell" id="2">2</div>
-            <div class="cell" id="3">3</div>
-            <div class="cell" id="4">4</div>
-            <div class="cell" id="5">5</div>
-            <div class="cell" id="6">6</div>
-            <div class="cell" id="7">7</div>
-            <div class="cell" id="8">8</div>
-            <div class="cell" id="9">9</div>
-        </div>
-        <!-- Game Winning Section Display -->
-        <div class="winnersection">
-            <h2 id="gamewinner">player 1 has won this game!</h2>
-        </div>
+      <!-- Top Portion of TicTacToe including title & playernames -->
+      <h1>Tic-Tac-Toe</h1>
+      <div id="playerscounter">
+        <div id="player1name">Player 1</div>
+        <div id="player1colon">:</div>
+        <div id="player1winscount">0</div>
+        <div id="player2name">Player 2</div>
+        <div id="player2colon">:</div>
+        <div id="player2winscount">0</div>
+      </div>
+      <hr />
+      <!-- Creating section for buttons/drop Down -->
+      <div id="buttonarea">
+        <button id="startgame">START GAME</button>
+        <button id="newgamebutton">NEW GAME</button>
+        <select id="selectvalue">
+          <!-- values within drop down -->
+          <option value="onePlayer">ONE PLAYER</option>
+          <option value="twoPlayers">TWO PLAYERS</option>
+        </select>
+      </div>
+      <!-- Board Game section with each cell -->
+      <div class="gameBoard">
+        <div class="cell" id="0"></div>
+        <div class="cell" id="1"></div>
+        <div class="cell" id="2"></div>
+        <div class="cell" id="3"></div>
+        <div class="cell" id="4"></div>
+        <div class="cell" id="5"></div>
+        <div class="cell" id="6"></div>
+        <div class="cell" id="7"></div>
+        <div class="cell" id="8"></div>
+      </div>
+      <!-- Game Winning Section Display -->
+      <div class="winnersection">
+        <h2 id="gamewinner"></h2>
+      </div>
     </main>
-</body>
+  </body>
 </html>
+
+<!-- Player 1, has won the game!-->

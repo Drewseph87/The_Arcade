@@ -1,66 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sono&display=swap");
 
 * {
-    font-family: 'Sono', sans-serif;
-    box-sizing: border-box;
+  font-family: "Sono", sans-serif;
+  box-sizing: border-box;
+  background-color: darkblue;
 }
 
 body {
-    margin: 25px;
-    padding: 25px 50px;
-    display: flex;
-    align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
+  margin: 25px;
+  padding: 25px 50px;
+  display: flex;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-h1{
-    padding: 0px;
+h1 {
+  padding: 0px;
+  color: whitesmoke;
+  font-size: 70px;
+  text-shadow: 7px 7px black;
 }
 
 main {
-    text-align: center;
-    margin: 0 auto;
-    width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  width: 500px;
 }
-/* .winnersection{
 
-} */
-#playerscounter{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding: 5px 15px 15px 15px;
+#playerscounter {
+  display: grid;
+  grid-template-columns: 59% 6% 35%;
+  padding: 5px 15px 15px 15px;
+  color: whitesmoke;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#player1name {
+  justify-self: end;
+  padding: 0px 15px 0px 0px;
+  text-shadow: 3px 3px black;
+}
+
+#player2name {
+  justify-self: end;
+  padding: 0px 15px 0px 0px;
+  text-shadow: 3px 3px black;
+}
+
+#player1winscount {
+  justify-self: start;
+  text-shadow: 3px 3px black;
+}
+
+#player2winscount {
+  justify-self: start;
+  text-shadow: 3px 3px black;
+}
+
+#player1colon {
+  justify-self: start;
+  padding: 0px 15px 0px 0px;
+  text-shadow: 3px 3px black;
+}
+
+#player2colon {
+  justify-self: start;
+  padding: 0px 15px 0px 0px;
+  text-shadow: 3px 3px black;
+}
+
+#gamewinner {
+  color: whitesmoke;
+  font-size: 30px;
+  text-shadow: 4px 4px black;
 }
 
 #buttonarea {
-    padding: 20px 0px 20px 0px;
+  padding: 20px 0px 20px 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+#startgame {
+  background-color: black;
+  color: deeppink;
+  font-weight: bolder;
+  height: 25px;
+
+  border-radius: 50px;
+  box-shadow: 1px 1px 5px 3px;
+  text-align: center;
+}
+
+#newgamebutton {
+  background-color: black;
+  color: deepskyblue;
+  font-weight: bolder;
+  height: 25px;
+  border-radius: 50px;
+  box-shadow: 1px 1px 5px 3px;
+  text-align: center;
+}
+
+#selectvalue {
+  background-color: black;
+  color: greenyellow;
+  font-weight: bolder;
+  height: 25px;
+  border-radius: 50px;
+  padding: 0px 0px 0px 13px;
+  box-shadow: 1px 1px 5px 3px;
+  text-align: center;
 }
 
 .gameBoard {
-    display: grid;
-    grid-template-columns: repeat(3, 5fr);
-    grid-template-rows: repeat(3, 2fr);
-    
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-rows: repeat(3, 2fr);
+  box-shadow: 5px 5px 5px;
 }
 
 .cell {
-    background-color: blueviolet;
-    height: 150px;
-    max-width: 200px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+  background-color: blueviolet;
+  color: whitesmoke;
+  text-shadow: 1px 1px 5px 3px;
+  height: 150px;
+  max-width: 200px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
-.cell:nth-child(3n+2) { 
-    border-right: 5px solid black;
-    border-left: 5px solid black;
+.cell:nth-child(3n + 2) {
+  border-right: 5px solid black;
+  border-left: 5px solid black;
 }
 
-.cell:nth-child(n+4):nth-child(-n+6){
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+.cell:nth-child(n + 4):nth-child(-n + 6) {
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
 }
 
-/* could come back and fix by removing padding/margin when on cell phone - @ */
+@media (max-width: 600px) {
+  #buttonarea {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  body {
+    padding: 5px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  .cell {
+    height: 120px;
+  }
+  #playerscounter {
+    font-size: 18px;
+  }
+  #selectvalue {
+    appearance: none;
+  }
+  #gamewinner {
+    font-size: 20px;
+    padding: 10px 0px;
+  }
+}
