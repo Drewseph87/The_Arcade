@@ -1,4 +1,4 @@
-# Beginning of the Arcade
+# Beginning of the Arcade with Psuedo Code
 
 # Website Structure
 

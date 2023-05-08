@@ -11,10 +11,9 @@ const addPoints2 = document.getElementById("player2winscount");
 let playersChoice = "onePlayer";
 let currentPlayerArray = ["X", "O"];
 let currentPlayer = 0;
-
 let gameBoard = ["", "", "", "", "", "", "", "", ""];
 
-//only possible winning choices in tic-tac-toe
+//only possible winning choices in tic-tac-toe based on spots/indexes
 const winningCombinations = [
   [0, 1, 2],
   [3, 4, 5],
@@ -26,9 +25,10 @@ const winningCombinations = [
   [2, 4, 6],
 ];
 
-//Before starting the game, first steps
+//Before starting the game, first steps to get the game prepped
 const initialState = () => {
   newGameButton.addEventListener("click", (event) => {
+    //new game starts with the startGame process again
     startGame();
   });
 
@@ -44,9 +44,10 @@ const initialState = () => {
   startButton.addEventListener("click", (event) => {
     let inputFor1 = prompt("What name shall we call you Player 1?");
     player1Name.innerText =
-      inputFor1 === null || inputFor1 === "" ? "Player 1" : inputFor1;
+      inputFor1 === null || inputFor1 === "" ? "Player 1" : inputFor1; // first try at tenary boolean conditions for if this else this/ also shows null / "" in prompt
 
     if (playersChoice === "onePlayer") {
+      //deciding between a computer or two players
       player2Name.innerText = "Computer";
     } else {
       let inputFor2 = prompt("What name shall we call you Player 2?");
@@ -57,38 +58,42 @@ const initialState = () => {
   });
 };
 
-// enable clickable cells for game function
+// enable clickable cells for game beginning of call back function to specify event.target.
 const clickCellWithTurn = (event) => {
   //variable to event.target
   const clickCell = event.target;
-  const clickCellIndex = parseInt(clickCell.getAttribute("id"));
+  const clickCellIndex = parseInt(clickCell.getAttribute("id")); //first time with parseInt to grab first integer after id = #
   winnerOrSwitchTurn(clickCellIndex);
 };
 
 const winnerOrSwitchTurn = (num) => {
-  const clickCell = cell[num];
-  //boolean to if no innertext,
+  //number goes into function
+  const clickCell = cell[num]; //cell array value = number
+
   if (!clickCell.innerText) {
-    clickCell.innerText = currentPlayerArray[currentPlayer];
-    gameBoard[num] = clickCell.innerText;
-    const winner = checkCurrentScore();
+    clickCell.innerText = currentPlayerArray[currentPlayer]; //setting inner text to currentPlayerArray x and o and currentplayer = 0 or 1 so it's choosing X or O
+    gameBoard[num] = clickCell.innerText; //making the index value of cell into the spot of gameboard to align that div with gameboard value
+    const winner = checkCurrentScore(); //variable to function to boolean to say if function is true come back to this.
     if (winner) {
       for (let i = 0; i < cell.length; i++) {
+        //remove event listeners
         cell[i].removeEventListener("click", clickCellWithTurn);
       }
       if (currentPlayer === 0) {
         gameWinner.innerText = `${player1Name.innerText} has won the game!`;
-        addPoints1.innerText++;
+        addPoints1.innerText++; //increase points by 1
       } else {
         gameWinner.innerText = `${player2Name.innerText} has won the game!`;
-        addPoints2.innerText++;
+        addPoints2.innerText++; //increase points by 1
       }
     } else if (!gameBoard.includes("")) {
       for (let i = 0; i < cell.length; i++) {
+        //remove event listeners
         cell[i].removeEventListener("click", clickCellWithTurn);
       }
       gameWinner.innerText = "It is a DRAW!!!";
     } else {
+      //if no win/draw decide next players turn
       if (currentPlayer === 0) {
         currentPlayer = 1;
       } else {
@@ -100,6 +105,7 @@ const winnerOrSwitchTurn = (num) => {
 };
 
 const setPlayerTurn = (currentPlayerIndex) => {
+  //text for next players turn or point to computer function
   if (currentPlayerIndex === 0) {
     gameWinner.innerText = `${player1Name.innerText} it's your turn!`;
   } else {
@@ -121,17 +127,18 @@ const startGame = () => {
     cell[i].innerText = "";
   }
   let randomPlayer = Math.floor(Math.random() * 2);
-  //reassigning currentPlayer
+  //reassigning currentPlayer to ranndom choice made from math.floor(math.random)
   currentPlayer = randomPlayer;
   setPlayerTurn(randomPlayer);
 };
 
 const computerPlayerFunc = () => {
+  //choose a random spot between 0-8
   let computerRandomNumber = Math.floor(Math.random() * 9);
   if (cell[computerRandomNumber].innerText === "") {
     winnerOrSwitchTurn(computerRandomNumber);
   } else {
-    computerPlayerFunc();
+    computerPlayerFunc(); //keep coming back to the function until a spot === ""
   }
 };
 
@@ -159,4 +166,5 @@ const checkCurrentScore = (boardArr) => {
   return false;
 };
 
-initialState();
+initialState(); //start new initial state
+//removed ticks because not snake to keep it going or counter based on time. Need to understand this better on future games.
